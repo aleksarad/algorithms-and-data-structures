@@ -1,7 +1,7 @@
 // write a function called same, which accepts 2 arrays. the function
 // should return true if every value in the array has it's corresponding value
 // squared in the second array. the values must appear the same amount of times.
-//my version of same function below, rewritten with my own code to better understand colt's approach.
+// my version of same function below, rewritten with my own code to better understand colt's approach.
 
 const same = (arr1, arr2) => {
     if(arr1.length !== arr2.length) {
@@ -32,6 +32,7 @@ const same = (arr1, arr2) => {
 same([2, 9, 5], [25, 81, 4])
 
 //given 2 string, write a function to determine if the second string is an anagram of the first
+//my solution:
 const validAnagram = (str1, str2) => {
     //if the length of the two strings don't match, then
     if (str1.length !== str2.length) {
@@ -84,3 +85,38 @@ const sumZero = (arr) => {
     }
 }
 
+//countUniqueValues
+//accepts a sorted array and counts the unique values in the array
+//my solution:
+const countUniqueValues = (arr) => {
+    let first = 0;
+    let second = 1;
+    while(second < arr.length) {
+        if(arr[first] !== arr[second]) {
+            arr[first + 1] = arr[second];
+            first++
+        }
+        else if(arr[first] == arr[second]) {
+            second++
+        }
+    }
+    console.log(arr, first)
+}
+
+//Sliding window
+const maxSubarraySum = (arr,num) => {
+    let maxSum = 0;
+    let tempSum = 0;
+    if (arr.length < num) {
+        return null
+    }
+    for (let i = 0; i < num; i++) {
+        maxSum += arr[i]
+    }
+    tempSum = maxSum;
+    for (let i = num; i < arr.length; i++) {
+        tempSum = tempSum - arr[i - num] + arr[i];
+        maxSum = Math.max(maxSum, tempSum);
+    }
+    return maxSum;
+}
