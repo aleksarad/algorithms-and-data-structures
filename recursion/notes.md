@@ -12,3 +12,9 @@ A function that calls itself.
 ## Parts of a Recursive Function ##
 * base case - condition when the recursion ends
 * different inputs
+
+## Helper Method Recursion ##
+* Outer and inner function, inner or helper is recursive.
+
+## Pure Recursion Tips ##
+* For arrays, use methods like slice,
