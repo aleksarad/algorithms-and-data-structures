@@ -81,3 +81,34 @@ const recursiveRange = (num) => {
     }
     return num + recursiveRange(num - 1)
 }
+
+//reverse
+const reverse = (str) => {
+    if(str.length <= 0) return str 
+    return str[str.length-1] + reverse(str.slice(0,-1))
+}
+
+//isPalindrome
+
+const isPalindrome = (str) => {
+    //1 char will always be a palindrome
+    if(str.length === 1) return true
+    //if there are 2 chars left at the center of the str they must be palindromes too
+    if(str.length === 2) {
+        return str[0] === str[1]
+    }
+    //compres first and last char
+    if(str[0] === str[str.length-1]) { 
+        //rerun isPalindrome on substring with 1st and last removed
+        return isPalindrome(str.slice(1,-1)) 
+    }
+    return false
+}
+
+//flatten
+//accepts an AoA and returns a new arr with flattened values
+
+const flatten = (arrOfArrs) => {
+
+}
+

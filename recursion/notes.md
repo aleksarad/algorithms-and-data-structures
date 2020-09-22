@@ -17,4 +17,4 @@ A function that calls itself.
 * Outer and inner function, inner or helper is recursive.
 
 ## Pure Recursion Tips ##
-* For arrays, use methods like slice,
+* For arrays, use methods like slice, spread operator, and concat.
