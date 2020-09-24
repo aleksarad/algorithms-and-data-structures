@@ -97,7 +97,7 @@ const isPalindrome = (str) => {
     if(str.length === 2) {
         return str[0] === str[1]
     }
-    //compres first and last char
+    //compares first and last char
     if(str[0] === str[str.length-1]) { 
         //rerun isPalindrome on substring with 1st and last removed
         return isPalindrome(str.slice(1,-1)) 
