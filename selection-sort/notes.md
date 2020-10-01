@@ -1,6 +1,7 @@
 # Selection Sort #
 o(n^2) time complexity
 
+* really slow.....
 * similar to bubble sort, but instead of placing large values into sorted position, it places small values into sorted position
 * sorted data accumulates at the beginning
 * pseudocode:
