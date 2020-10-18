@@ -113,6 +113,7 @@ class SinglyLinkedList{
         return node
     }
 
+    //changing/updating the value of a node based on its position
     set(index, val){
       let replace = this.get(index)
       if(replace) {
@@ -123,14 +124,68 @@ class SinglyLinkedList{
       }
     }
 
+    //insert
+    //adding node at specific position
+    insert(index, val) {
+        if(index < 0 || index > this.length) return false 
+
+        if(index === this.length) {
+            this.push(val)
+        } 
+        else if(index === 0) { 
+            this.unshift(val)
+        } else {
+            let newNode = new Node(val)
+            let currentNode = this.get(index - 1)
+            newNode.next = currentNode.next
+            currentNode.next = newNode
+            this.length++
+        }
+        return true
+    }
+
+    //remove value at index
+    remove(index){
+        if(index < 0 || index >= this.length) return undefined
+        if(index === this.length - 1) return this.pop()
+        if(index === 0) return this.shift()
+        else {
+            let before = this.get(index-1)
+            let nodeRemoved = before.next
+            let after = nodeRemoved.next
+            before.next = after
+            this.length--
+            return nodeRemoved
+        }
+    }
+    
+    //**review this one */
+    reverse(){
+        let node = this.head
+        this.head = this.tail
+        this.tail = node
+
+        let prev = null
+        let next;
+
+        for(let i = 0; i < this.length; i++) {
+            next = node.next 
+            node.next = prev 
+            prev = node 
+            node = next
+        }
+        return this
+    }
+
 }
 
 let testList = new SinglyLinkedList()
 testList.push('nicki')
 testList.push('is')
 testList.push('queen')
-// testList.unshift('onika')
-console.log(testList.set(0, 'onika'))
+testList.reverse()
+console.log(testList)
+
 
 // let newList = new SinglyLinkedList()
 // newList.unshift('hey')
