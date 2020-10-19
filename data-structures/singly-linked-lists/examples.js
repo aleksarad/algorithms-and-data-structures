@@ -158,6 +158,17 @@ class SinglyLinkedList{
             return nodeRemoved
         }
     }
+
+    //just to easily print vals into an array
+    print(){
+        let arr = []
+        let current = this.head 
+        while(current !== null) {
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr)
+    }
     
     //**review this one */
     reverse(){
@@ -180,14 +191,9 @@ class SinglyLinkedList{
 }
 
 let testList = new SinglyLinkedList()
-testList.push('nicki')
-testList.push('is')
-testList.push('queen')
-testList.reverse()
-console.log(testList)
+testList.push(1)
+testList.push(2)
+testList.push(3)
+testList.push(4)
 
 
-// let newList = new SinglyLinkedList()
-// newList.unshift('hey')
-
-// console.log(newList)
