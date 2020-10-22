@@ -15,18 +15,49 @@ stack.pop()
 
 
 //stack class with singly linked list implementation
+//we can't use the same push and pop from our singly linked list
+//because those are not constant time - instead
+//we are using shift and unshift but calling them push and pop
+
 class Node {
-    constructor(){
-       this.first = null;
-       this.last = null;
-       this.size = 0;  
+    constructor(value){
+        this.value = value
+        this.next = null
     }
 }
 
 class Stack {
-    constructor(value){
-        this.value = value;
-        this.next = null;
+    constructor(){
+       this.first = null
+       this.last = null
+       this.size = 0
     }
 
+    push(val){
+        let newNode = new Node(val)
+        if(this.size === 0) {
+            this.first = newNode
+            this.last = newNode 
+        } else {
+            let prevHead = this.first
+            newNode.next = prevHead 
+            this.first = newNode
+        }
+        this.size++
+        return this.size
+    }
+
+    pop(){
+        if(this.size === 0) return null 
+        let nodeToRemove = this.first 
+        if(this.size === 1) {
+            this.first = null 
+            this.last = null 
+        } else {
+            this.first = nodeToRemove.next
+            nodeToRemove.next = null
+        }
+        this.size-- 
+        return nodeToRemove
+    }
 }
