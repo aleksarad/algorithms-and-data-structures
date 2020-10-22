@@ -1,3 +1,4 @@
+//STACK
 //creating our own stack with an array
 let stack = []
 //add
@@ -59,5 +60,58 @@ class Stack {
         }
         this.size-- 
         return nodeToRemove
+    }
+}
+
+
+//QUEUE
+//arr queue
+let queue = []
+queue.push('1')
+queue.push('2')
+
+queue.shift()
+
+//or 
+
+queue.unshift('1')
+queue.pop()
+
+
+//class queue
+//we're going to add to the end and remove from beginning
+
+class Queue {
+    constructor(){
+       this.first = null
+       this.last = null
+       this.size = 0
+    }
+
+    enqueue(val){
+        let newNode = new Node(val)
+        if(this.size === 0) {
+            this.first = newNode
+            this.last = newNode
+        } else {
+            this.last.next = newNode
+            this.last = newNode
+        }
+        this.size++
+        return this.size
+    }
+
+    dequeue(){
+        if(this.size === 0) return null 
+        let toBeRemoved = this.first 
+        if(this.size === 1) {
+            this.first = null 
+            this.last = null
+        } else {
+            this.first = toBeRemoved.next 
+            toBeRemoved.next = null
+        }
+        this.size-- 
+        return toBeRemoved
     }
 }
