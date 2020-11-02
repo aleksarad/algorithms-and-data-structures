@@ -10,7 +10,10 @@ When to use:
 
 Memoization
 * storing the results of function calls and returning the result when the same inputs occur again
+* improves time complexity since we're not repeating subproblems over and over
+* o(n) time complexity
 
-Buttom Up - Tabulation
+Bottom Up - Tabulation
 * usually done using a loop
 * storing the result of a previous result in a table
+* o(n) time complexity
