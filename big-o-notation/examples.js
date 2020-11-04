@@ -3,7 +3,7 @@
 //approach 1: o(n) time
 //o(1) space, because we are only allocating 2 variables throughout this algorithm
 //total and i
-const addUpTo1 = (n) => {
+const addUpToNumber = (n) => {
     let total = 0;
     for (let i = 0; i<= n; i++) {
         total += i
