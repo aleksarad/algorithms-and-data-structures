@@ -27,4 +27,13 @@
             * invoke the helper function on the current variable
             * return arr of values
         * Post Order
+            * traverse the entire branch first and then move up it
+            * create a variable to store the values of nodes visited
+            * store the root in a var called current
+            * write a helper that accepts a node:
+                * if the node has a left property, call the helper on it
+                * same with right property
+                * push the value of the node to the variable that stores the values
+                * invoke helper with current
+            * return arr of vals
         * In order
