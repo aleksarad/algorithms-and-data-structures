@@ -37,3 +37,10 @@
                 * invoke helper with current
             * return arr of vals
         * In order
+            * left, middle, right
+            * create a var to store values of nodes visited
+            * store root in current
+            * helper: 
+                * if node has left, call helper
+                * push the value to vals []
+                * if the node has a right property, call helper

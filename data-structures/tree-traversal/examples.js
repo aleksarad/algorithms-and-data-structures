@@ -110,6 +110,18 @@ class BinarySearchTree {
         helper(current)
         return vals
     }
+
+    inOrder(){
+        const vals = []
+        let current = this.root
+        function helper(node){
+            if(node.left) helper(node.left)
+            vals.push(node.value)
+            if(node.right) helper(node.right)
+        }
+        helper(current)
+        return vals
+    }
 }
 
 
